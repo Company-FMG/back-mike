@@ -38,5 +38,5 @@ public class Viatura {
         this.marca = marca;
         this.estado = estado;
     }
-
+ 
 }

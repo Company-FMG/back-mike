@@ -1,9 +1,6 @@
 package com.fmgcompany.mike.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.Table;
 
 @MappedSuperclass
 public abstract class Pessoa {
