@@ -1,6 +1,5 @@
 package com.fmgcompany.mike.model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -10,12 +9,17 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "ocorrencias")
 public class Ocorrencia {
+    
     @Id
     private String idOcorrencia;
-    @OneToOne(cascade = CascadeType.ALL)
+    
+    @OneToOne
     @JoinColumn(name = "idPolicial", referencedColumnName = "idPolicial")
     private Policial responsavelBO;
     private String relatorio;
+
+    @OneToOne
+    private RelatorioOcorrencia relatorioOcorrencia;
 
     public Ocorrencia() {}
 

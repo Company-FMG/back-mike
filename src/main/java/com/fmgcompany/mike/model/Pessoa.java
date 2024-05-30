@@ -1,12 +1,8 @@
 package com.fmgcompany.mike.model;
-<<<<<<< HEAD
 
-import jakarta.persistence.MappedSuperclass;
-=======
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
->>>>>>> 0d03940ecbe2442ce2831a77c36d83b06cb9b863
 
 @Getter
 @Setter

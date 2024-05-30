@@ -3,6 +3,8 @@ package com.fmgcompany.mike.model;
 import java.sql.Date;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
@@ -11,32 +13,32 @@ import lombok.Getter;
 public class RelatorioOcorrencia {
     
     @Id
-    @Generated(strategy = )
-    @Column
-    private String id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id_relatorio_ocorrencia")
+    private String idRelatorioOcorrencia;
 
     //pegar direto do id
-    @Column
+    @Column(name = "responsavel_bo")
     private Policial responsavelBo;
     
-    @Column
-    private Date horarioRelatorioConcluido;
+    @Column(name = "created_at")
+    private Date createdAt;
 
-    @Column
-    private Date horarioRelatorioConcluidoAtualizado;
+    @Column(name = "updated_at")
+    private Date updatedAt;
     
-    @Column
+    @Column(name = "justificativa_bo_nao_realizado")
     private String justificativaBoNaoRealizado;
     
-    @Column
+    @Column(name = "tipo_ocorrencia")
     private String tipoOcorrencia;
     
-    @Column
     private String descricao;
-    
-    @Column
     private String endereco;
     
+    @OneToOne
+    private Ocorrencia ocorrencia;
+
     @OneToOne
     private Vitima vitima;
     
@@ -44,7 +46,7 @@ public class RelatorioOcorrencia {
     private Suspeito suspeito;
 
     public RelatorioOcorrencia() {
-
+        
     }
 
     public void fazerBo() {
